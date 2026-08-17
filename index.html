@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מנעולן מקצועי | פריצת דלתות והחלפת מנעולים - באר שבע</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@500;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12181F;
+    --navy-soft:#1C2530;
+    --paper:#F1EDE4;
+    --paper-dim:#E7DFCE;
+    --brass:#B98D3E;
+    --brass-bright:#D9AC5C;
+    --amber:#E8A33D;
+    --text-dark:#1A1F26;
+    --text-muted:#655F53;
+    --text-on-navy:#EFEAE0;
+    --text-on-navy-muted:#9CA3AC;
+    --line:#D9D0BB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--text-dark);
+    font-family:'Assistant',sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'David Libre',serif;
+    font-weight:700;
+    line-height:1.2;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(18,24,31,0.95);
+    backdrop-filter:blur(6px);
+  }
+  .navwrap{max-width:1100px;margin:0 auto;padding:16px 32px; display:flex;align-items:center;justify-content:space-between; gap:14px;}
+  .brand{color:var(--text-on-navy); font-family:'David Libre',serif; font-size:1.2rem;}
+  .brand span{color:var(--brass-bright);}
+  nav.links{display:flex;gap:26px;font-size:0.9rem;color:var(--text-on-navy-muted);}
+  nav.links a:hover{color:var(--text-on-navy);}
+  .nav-link-btn{cursor:pointer;}
+  .nav-link-btn:hover{color:var(--text-on-navy);}
+  .nav-cta{background:var(--brass); color:var(--navy); padding:10px 20px; border-radius:3px; font-weight:700; font-size:0.85rem; display:inline-block;}
+  .nav-cta:hover{background:var(--brass-bright);}
+  @media(max-width:780px){
+    nav.links{gap:14px; font-size:0.78rem;}
+    .navwrap{padding:14px 20px;}
+    .brand{font-size:1.05rem;}
+    .nav-cta{padding:8px 14px; font-size:0.78rem;}
+  }
+
+  /* HERO */
+  .hero{background:radial-gradient(ellipse at 25% 10%, var(--navy-soft), var(--navy) 65%); color:var(--text-on-navy); padding:76px 0 0;}
+  .hero-inner{max-width:1100px;margin:0 auto;padding:0 32px 40px; display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:center;}
+  .eyebrow{font-size:0.78rem; letter-spacing:0.1em; color:var(--brass-bright); margin-bottom:16px; display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:""; width:8px;height:8px;border-radius:50%; background:var(--amber); box-shadow:0 0 0 4px rgba(232,163,61,0.18);}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.3rem); color:var(--text-on-navy); margin-bottom:20px;}
+  .hero h1 em{font-style:normal; color:var(--brass-bright);}
+  .hero p.lede{font-size:1.03rem; color:var(--text-on-navy-muted); max-width:44ch; margin-bottom:30px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px; padding:14px 26px; border-radius:3px; font-weight:700; font-size:0.96rem; transition:transform .15s ease, background .15s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-brass{background:var(--brass); color:var(--navy);}
+  .btn-brass:hover{background:var(--brass-bright);}
+  .btn-ghost{border:1px solid rgba(239,234,224,0.28); color:var(--text-on-navy);}
+  .btn-ghost:hover{border-color:rgba(239,234,224,0.6);}
+
+  /* signature: keyhole + turning key (hero animation) */
+  .lock-rig{display:flex; align-items:center; justify-content:center;}
+  .lock-rig svg{width:100%; max-width:360px;}
+  .key-group{transform-origin:126px 150px; animation:turn 3.2s ease-in-out infinite;}
+  @keyframes turn{
+    0%,15%{transform:rotate(-26deg);}
+    45%,60%{transform:rotate(0deg);}
+    85%,100%{transform:rotate(-26deg);}
+  }
+  .pin{fill:var(--text-on-navy-muted); opacity:0.35;}
+  .glow-ring{fill:none; stroke:var(--amber); stroke-width:1.4; opacity:0; transform-origin:126px 150px; animation:click-glow 3.2s ease-in-out infinite;}
+  @keyframes click-glow{
+    0%,40%{opacity:0; r:14;}
+    50%{opacity:0.9; r:14;}
+    65%{opacity:0; r:34;}
+    100%{opacity:0;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .key-group{animation:none; transform:rotate(0deg);}
+    .glow-ring{animation:none; opacity:0;}
+  }
+  @media(max-width:860px){
+    .hero-inner{grid-template-columns:1fr; text-align:right;}
+    .lock-rig{max-width:240px; margin:0 auto;}
+  }
+
+  .strip{background:var(--navy-soft); border-top:1px solid rgba(239,234,224,0.08);}
+  .strip .wrap{display:flex; justify-content:center; flex-wrap:wrap; gap:28px; padding:20px 32px; color:var(--text-on-navy-muted); font-size:0.9rem; text-align:center;}
+
+  .section{padding:80px 0;}
+  .section-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:40px; gap:20px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+  .section-tag{font-size:0.74rem; letter-spacing:0.06em; color:var(--brass); font-weight:700;}
+  .section-note{color:var(--text-muted); max-width:34ch; font-size:0.94rem;}
+
+  /* SERVICES */
+  .service-list{border-top:1px solid var(--line);}
+  .service-row{display:grid; grid-template-columns:52px 1fr auto; align-items:center; gap:20px; padding:20px 4px; border-bottom:1px solid var(--line); transition:background .15s ease;}
+  .service-row:hover{background:rgba(185,141,62,0.08);}
+  .service-icon{width:38px;height:38px; display:flex;align-items:center;justify-content:center;}
+  .service-icon svg{width:100%;height:100%;stroke:var(--brass); fill:none; stroke-width:1.6;}
+  .service-row h3{font-size:1.05rem; font-weight:600; color:var(--text-dark);}
+  .service-row .desc{color:var(--text-muted); font-size:0.86rem; margin-top:3px;}
+  .service-price{font-size:0.9rem; color:var(--text-muted); white-space:nowrap; font-weight:600;}
+  @media(max-width:640px){ .service-row{grid-template-columns:38px 1fr;} .service-price{display:none;} }
+  .price-note{margin-top:18px; font-size:0.82rem; color:var(--text-muted);}
+
+  /* CTA */
+  .cta{background:var(--navy); color:var(--text-on-navy); text-align:center; padding:92px 0;}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.5rem); color:var(--text-on-navy); margin-bottom:16px;}
+  .cta p{color:var(--text-on-navy-muted); max-width:44ch; margin:0 auto 34px; font-size:1rem;}
+  .cta .btn-brass{font-size:1.03rem; padding:16px 32px;}
+
+  footer{background:var(--navy); color:var(--text-on-navy-muted); border-top:1px solid rgba(239,234,224,0.1); padding:24px 0; font-size:0.8rem; text-align:center;}
+
+  /* floating contact buttons (demo only, inert) */
+  .float-contacts{
+    position:fixed; bottom:22px; left:22px; z-index:60;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .float-btn{
+    width:54px; height:54px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    cursor:default;
+  }
+  .float-btn svg{width:26px;height:26px;}
+  .float-btn.call{background:var(--brass);}
+  .float-btn.call svg{stroke:var(--navy); fill:none; stroke-width:2;}
+  .float-btn.wa{background:#25D366;}
+  .float-btn.wa svg{fill:#0b1a12;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navwrap">
+    <div class="brand">המנעולן <span>שלך</span></div>
+    <nav class="links">
+      <span class="nav-link-btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});">שירותים ומחירון</span>
+    </nav>
+    <span class="nav-cta">שליחת הודעה</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">מנעולן · באר שבע</div>
+      <h1>ננעלתם בחוץ?<br>אני <em>כבר</em> בדרך.</h1>
+      <p class="lede">פריצת דלתות, החלפת צילינדרים ומנעולים ושכפול מפתחות — שירות מנעולנות מקצועי באזור באר שבע.</p>
+      <div class="hero-ctas">
+        <span class="btn btn-ghost" style="border:1px solid rgba(239,234,224,0.28);color:var(--text-on-navy);">שליחת הודעה</span>
+        <span class="btn btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});">מחירון מלא</span>
+      </div>
+    </div>
+    <div class="lock-rig">
+      <svg viewBox="0 0 260 300" aria-hidden="true">
+        <rect x="30" y="60" width="200" height="180" rx="10" fill="none" stroke="rgba(239,234,224,0.14)" stroke-width="2"/>
+        <circle cx="126" cy="150" r="34" fill="none" stroke="rgba(239,234,224,0.22)" stroke-width="2"/>
+        <path d="M116 150 a10 10 0 1 1 20 0 l0 26 -20 0 z" fill="rgba(239,234,224,0.16)"/>
+        <circle class="glow-ring" cx="126" cy="150" r="14"/>
+        <g class="pin"><rect x="105" y="86" width="8" height="24"/></g>
+        <g class="pin"><rect x="122" y="82" width="8" height="28"/></g>
+        <g class="pin"><rect x="139" y="86" width="8" height="24"/></g>
+        <g class="key-group">
+          <rect x="122" y="150" width="8" height="90" rx="3" fill="var(--brass-bright)"/>
+          <circle cx="126" cy="150" r="22" fill="none" stroke="var(--brass-bright)" stroke-width="7"/>
+          <rect x="118" y="222" width="20" height="10" fill="var(--brass-bright)"/>
+          <rect x="118" y="238" width="14" height="8" fill="var(--brass-bright)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>מנעולן פעיל באזור באר שבע</div>
+    <div>מענה טלפוני ישיר</div>
+    <div>פריצת דלתות והחלפת מנעולים</div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">מחירון לדוגמה</div>
+        <h2>שירותי מנעולנות</h2>
+      </div>
+      <p class="section-note">להמחשה בלבד — מחירים סופיים ניתנים בטלפון לפי סוג הדלת והמנעול.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <div><h3>החלפת מנעול, דלת פנימית</h3><div class="desc">מנגנון סטנדרטי, כולל התקנה</div></div>
+        <div class="service-price">₪250–350</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <div><h3>החלפת מנעול רב בריח, דלת פלדלת</h3><div class="desc">מנגנון סטנדרטי, כולל התקנה</div></div>
+        <div class="service-price">₪450–900</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+        <div><h3>החלפת מנעול, דלת שריונית / חסם</h3><div class="desc">מנגנון מוגבר לדלתות ביטחון</div></div>
+        <div class="service-price">₪900–1200</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M9 17h6"/></svg></div>
+        <div><h3>פריצת דלת פלדלת (יום)</h3><div class="desc">פריצה בלבד, ללא נזק מיותר</div></div>
+        <div class="service-price">₪250–300</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M9 17h6"/></svg></div>
+        <div><h3>פריצת דלת פלדלת (תעריף לילה)</h3><div class="desc">זמינות גם מחוץ לשעות</div></div>
+        <div class="service-price">₪350–400</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+        <div><h3>שכפול מפתחות</h3><div class="desc">שכפול מהיר לכל סוגי המפתחות</div></div>
+        <div class="service-price">₪30–80</div>
+      </div>
+    </div>
+    <div class="price-note">* המחירים בעמוד זה הם דוגמה להמחשה בלבד ואינם מחירון מאומת.</div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ננעלתם? זקוקים להחלפת מנעול?</h2>
+    <p>התקשרו או שלחו הודעה — שירות באזור באר שבע.</p>
+    <div style="margin-top:8px;font-size:0.78rem;color:var(--text-on-navy-muted);">כפתורי יצירת קשר מופיעים כעת בפינת המסך</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">מנעולן מקצועי · באר שבע והסביבה</div>
+</footer>
+
+<div class="float-contacts">
+  <div class="float-btn call" aria-label="התקשרות (דמו בלבד)"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+  <div class="float-btn wa" aria-label="וואטסאפ (דמו בלבד)"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.6-1.4 1.2-2 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.3.1.5.1.7-.1.2-.2.8-1 1-1.3.2-.3.4-.3.7-.2.3.1 1.8.8 2.1.9.3.1.5.2.6.3.1.2.1.9-.1 1.5z"/></svg></div>
+</div>
+
+</body>
+</html>
