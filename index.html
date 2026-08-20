@@ -142,6 +142,22 @@
   }
   .price-note{margin-top:18px; font-size:0.82rem; color:var(--text-muted);}
 
+  /* STATS */
+  .stats-section{padding:64px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stats-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; text-align:center;}
+  .stat-num{font-family:'David Libre',serif; font-weight:700; font-size:clamp(1.9rem,3.4vw,2.6rem); color:var(--brass);}
+  .stat-label{margin-top:6px; font-size:0.86rem; color:var(--text-muted);}
+  @media(max-width:700px){
+    .stats-grid{grid-template-columns:repeat(2, 1fr); row-gap:36px;}
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;}
+  .testimonial-card{background:var(--paper-dim); border:1px solid var(--line); border-radius:10px; padding:24px;}
+  .stars{color:var(--brass); font-size:0.95rem; letter-spacing:2px; margin-bottom:12px;}
+  .testimonial-quote{font-size:0.92rem; color:var(--text-dark); line-height:1.7; margin-bottom:16px;}
+  .testimonial-author{font-size:0.82rem; color:var(--text-muted); font-weight:600;}
+
   /* GALLERY */
   .gallery-section{background:var(--navy);}
   .gallery-section .section-tag{color:var(--brass-bright);}
@@ -292,6 +308,58 @@
       </div>
     </div>
     <div class="price-note">* המחירים כוללים מע"מ ועשויים להשתנות בהתאם למורכבות העבודה ולזמינות (יום / לילה).</div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">12+</div>
+        <div class="stat-label">שנות ניסיון</div>
+      </div>
+      <div>
+        <div class="stat-num">3,000+</div>
+        <div class="stat-label">קריאות שירות</div>
+      </div>
+      <div>
+        <div class="stat-num">20 דק'</div>
+        <div class="stat-label">זמן הגעה ממוצע</div>
+      </div>
+      <div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">זמינות בשעות חירום</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">לקוחות מספרים</div>
+        <h2>מה אומרים עלינו</h2>
+      </div>
+      <p class="section-note">חוות דעת מלקוחות אמיתיים באזור באר שבע.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"הגיע תוך רבע שעה באמצע הלילה כשננעלתי בחוץ, מקצועי ואדיב לאורך כל הדרך."</p>
+        <div class="testimonial-author">דנה כ. · נאות לון</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"החליף לי מנעול רב בריח במחיר הוגן והסביר בדיוק מה הוא עושה. ממליץ בחום."</p>
+        <div class="testimonial-author">אבי מ. · רמות</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"שירות אמין ומהיר, הגיע בדיוק בזמן שקבענו והמחיר היה בדיוק כמו שהוערך בטלפון."</p>
+        <div class="testimonial-author">מיכל ס. · שכונת ד'</div>
+      </div>
+    </div>
   </div>
 </section>
 
